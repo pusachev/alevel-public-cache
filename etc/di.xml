@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * di.xml
+ *
+ * @author    Pavel Usachev <pausachev@gmail.com>
+ * @copyright 2019 Pavel Usachev
+ * @license   https://opensource.org/licenses/BSD-3-Clause BSD-3-Clause
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="ALevel\PublicCache\Api\Data\PlayerInterface"
+                type="ALevel\PublicCache\Model\Data\Player"/>
+    <preference for="ALevel\PublicCache\Api\Repository\PlayerRepositoryInterface"
+                type="ALevel\PublicCache\Repository\PlayerRepository"/>
+    <type name="ALevel\PublicCache\Repository\PlayerRepository">
+        <arguments>
+            <argument name="serializer" xsi:type="object">Magento\Framework\Serialize\Serializer\Serialize</argument>
+        </arguments>
+    </type>
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array" >
+                <item
+                    name="player_grid_listing_data_source"
+                    xsi:type="string"
+                >ALevel\PublicCache\DataProvider\Grid\PlayersProvider</item>
+            </argument>
+        </arguments>
+    </type>
+</config>

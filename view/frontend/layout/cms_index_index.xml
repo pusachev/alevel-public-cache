@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * alevel_blocks_index_index.xml
+ *
+ * @author    Pavel Usachev <pausachev@gmail.com>
+ * @copyright 2019 Pavel Usachev
+ * @license   https://opensource.org/licenses/BSD-3-Clause BSD-3-Clause
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="empty"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="content">
+            <block
+                class="ALevel\PublicCache\Block\Players"
+                name="alevel.players.list"
+                template="ALevel_PublicCache::players.phtml"
+            />
+        </referenceContainer>
+    </body>
+</page>

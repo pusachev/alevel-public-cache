@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="alevel_player" resource="default" engine="innodb" comment="player data table">
+        <column name="player_id"
+                xsi:type="int"
+                padding="11"
+                unsigned="true"
+                nullable="false"
+                identity="true"
+                comment="Player ID"/>
+        <column name="first_name"
+                xsi:type="varchar"
+                length="32"
+                nullable="false"
+                comment="Player first  name"/>
+        <column name="last_name"
+                xsi:type="varchar"
+                length="32"
+                nullable="true"
+                comment="Player last name"/>
+        <column name="blood_points"
+                xsi:type="int"
+                padding="11"
+                unsigned="true"
+                nullable="false"
+                identity="false"
+                comment="player score"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="player_id"/>
+        </constraint>
+    </table>
+</schema>

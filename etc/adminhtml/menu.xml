@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add
+                id="ALevel_PublicCache::all"
+                title="Alevel Players"
+                translate="title"
+                module="ALevel_PublicCache"
+                sortOrder="20"
+                resource="ALevel_PublicCache::all"
+        />
+        <add
+                id="ALevel_PublicCache::players_grid"
+                title="Players Grid"
+                translate="title"
+                module="ALevel_PublicCache"
+                sortOrder="10"
+                parent="ALevel_PublicCache::all"
+                action="alevel_publiccache/players/index"
+                resource="ALevel_PublicCache::players_grid"
+        />
+    </menu>
+</config>
